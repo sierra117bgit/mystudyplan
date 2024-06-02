@@ -5,8 +5,12 @@ import './App.css';
 
 const initialCourses = {
     'year1semester1': [
-        { id: 'csc101', name: 'Introduction to Programming', credits: 3 },
-	{ id: 'gen101', name: 'Physical Education', credits: 1 },
+        { id: 'csc102', name: 'Introduction to Programming', credits: 3, prerequisites: ['csc122'], inversePrerequisites: true },
+	{ id: 'csc111', name: 'Ethics', credits: 1 },
+	{ id: 'csc165', name: 'Discrete Mathematics', credits: 3 },
+	{ id: 'gen111', name: 'Man & Ethics of Living', credits: 3 },
+	{ id: 'gen121', name: 'Learning & Problem Solving', credits: 3 },
+	{ id: 'lng221', name: 'Introduction to Programming', credits: 3 },
         { id: 'math101', name: 'Calculus I', credits: 3, prerequisites: ['math102'], inversePrerequisites: true }
     ],
     'year1semester2': [
