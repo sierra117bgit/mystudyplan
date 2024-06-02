@@ -15,9 +15,13 @@ const initialCourses = {
     ],
     'year1semester2': [
         { id: 'csc122', name: 'Intro to prog. Lab', credits: 3 },
-	{ id: 'csc209', name: 'Data Structures', credits: 3 },
+	{ id: 'csc209', name: 'Data Structures', credits: 3 },	
 	{ id: 'csc233', name: 'Programming Paradigms', credits: 2 },
         { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] }
+	{ id: 'csc233', name: 'Statistics', credits: 3 },
+	{ id: 'gen231', name: 'Miracle of thinking', credits: 3 },
+	{ id: 'lng222', name: 'Academic', credits: 3 },
+	
     ],
     'year2semester1': [
         { id: 'csc201', name: 'Introduction to Something', credits: 3 },
@@ -103,8 +107,12 @@ function App() {
         doc.save('course-plan.pdf');
     };
 
-    return (
+return (
         <div className="App">
+            <header>
+                <h1>My Study Planner</h1>
+                <h2>134 Credits Required to Graduate</h2>
+            </header>
             <DragDropContext onDragEnd={onDragEnd}>
                 {Object.entries(courses).map(([semesterId, semesterCourses]) => (
                     <Droppable droppableId={semesterId} key={semesterId}>
