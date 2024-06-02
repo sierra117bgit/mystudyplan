@@ -5,17 +5,33 @@ import './App.css';
 
 const initialCourses = {
     'year1semester1': [
-        { id: 'csc101', name: 'Introduction to Programming', credits: 3 },
-	{ id: 'csc102', name: 'Introduction', credits: 3 },
-	{ id: 'csc103', name: 'Programming', credits: 3 },
-	{ id: 'gen101', name: 'PE', credits: 3 },
+        { id: 'csc102', name: 'Introduction to Programming', credits: 3, prerequisites: ['csc122', 'csc209', 'csc233'], inversePrerequisites: true },
+	{ id: 'csc111', name: 'Ethics', credits: 1 },
+	{ id: 'csc165', name: 'Discrete Mathematics', credits: 3 },
+	{ id: 'gen111', name: 'Man & Ethics of Living', credits: 3 },
+	{ id: 'gen121', name: 'Learning & Problem Solving', credits: 3 },
+	{ id: 'lng221', name: 'Introduction to Programming', credits: 3 },
         { id: 'math101', name: 'Calculus I', credits: 3, prerequisites: ['math102'], inversePrerequisites: true }
     ],
     'year1semester2': [
-        { id: 'csc110', name: 'Data Structures', credits: 3 },
-	{ id: 'gen111', name: 'Ethics', credits: 3 },
-	{ id: 'lng101', name: 'Talking', credits: 3 },
+        { id: 'csc122', name: 'Intro to prog. Lab', credits: 3, prerequisites: ['csc102']},
+	{ id: 'csc209', name: 'Data Structures', credits: 3 },	
+	{ id: 'csc233', name: 'Programming Paradigms', credits: 2 },
         { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] }
+	{ id: 'csc233', name: 'Statistics', credits: 3 },
+	{ id: 'gen231', name: 'Miracle of thinking', credits: 3 },
+	{ id: 'lng222', name: 'Academic', credits: 3 },
+	
+    ],
+    'year2semester1': [
+        { id: 'csc105', name: 'Web Dev App', credits: 3 },
+	{ id: 'csc202', name: 'OO Concept', credits: 1 },
+	{ id: 'csc210', name: 'Algorithms', credits: 3 },
+	{ id: 'csc218', name: 'DB', credits: 3 },
+	{ id: 'csc290', name: 'Integrated Project', credits: 1 },
+	{ id: 'csc203', name: 'Com. Arch.', credits: 3 },
+	{ id: 'csc201', name: 'Introduction to Something', credits: 3 },
+        { id: 'math101', name: 'Calculus I', credits: 4, prerequisites: ['math102'], inversePrerequisites: true }
     ],
 };
 
