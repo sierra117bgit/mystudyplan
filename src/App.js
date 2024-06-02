@@ -12,6 +12,10 @@ const initialCourses = {
         { id: 'csc102', name: 'Data Structures', credits: 3 },
         { id: 'math102', name: 'Calculus II', credits: 4, prerequisites: ['math101'] }
     ],
+    'year2semester1': [
+        { id: 'csc101', name: 'Introduction to Programming', credits: 3 },
+        { id: 'math101', name: 'Calculus I', credits: 4, prerequisites: ['math102'], inversePrerequisites: true }
+    ],
 };
 
 // Helper function to check if prerequisites are met
