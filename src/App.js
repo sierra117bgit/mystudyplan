@@ -16,7 +16,7 @@ const initialCourses = {
     'year1semester2': [
         { id: 'csc122', name: 'Intro to prog. Lab', credits: 3 },
 	{ id: 'csc209', name: 'Data Structures', credits: 3 },
-	{ id: 'csc233', name: 'Intro to prog. Lab', credits: 3 },
+	{ id: 'csc233', name: 'Programming Paradigms', credits: 2 },
         { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] }
     ],
     'year2semester1': [
@@ -50,24 +50,22 @@ function App() {
     const [courses, setCourses] = useState(initialCourses);
 
     const onDragEnd = (result) => {
-        console.log('Drag result:', result);
         const { source, destination } = result;
         if (!destination) return; // Dropped outside any droppable area
 
-        if (!arePrerequisitesMet(result.draggableId, destination.droppableId, courses)) {
-            alert("You cannot take this course as it has a prerequisite.");
-            return; // Exit if prerequisites not met
+        if (source.droppableId === destination.droppableId && source.index === destination.index) {
+            return; // No movement happened
         }
 
         const start = courses[source.droppableId];
         const finish = courses[destination.droppableId];
+
         const startCourseItems = Array.from(start);
-        const finishCourseItems = Array.from(finish);
+        const finishCourseItems = source.droppableId === destination.droppableId ? startCourseItems : Array.from(finish);
         const [removed] = startCourseItems.splice(source.index, 1);
-        
+
         finishCourseItems.splice(destination.index, 0, removed);
 
-        // Check if adding the course exceeds the credit limit
         if (getTotalCredits(finishCourseItems) > 21) {
             alert("A semester cannot have more than 21 credits.");
             return; // Do not update state, effectively reverting the drag
@@ -78,6 +76,13 @@ function App() {
             [source.droppableId]: startCourseItems,
             [destination.droppableId]: finishCourseItems,
         };
+
+        if (source.droppableId !== destination.droppableId) {
+            if (!arePrerequisitesMet(result.draggableId, destination.droppableId, newState)) {
+                alert("You cannot take this course as it has a prerequisite.");
+                return; // Exit if prerequisites not met
+            }
+        }
 
         setCourses(newState);
     };
