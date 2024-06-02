@@ -17,13 +17,12 @@ const initialCourses = {
         { id: 'csc122', name: 'Intro to prog. Lab', credits: 3, prerequisites: ['csc102']},
 	{ id: 'csc209', name: 'Data Structures', credits: 3 },	
 	{ id: 'csc233', name: 'Programming Paradigms', credits: 2 },
-        { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] }
+        { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] },
 	{ id: 'csc233', name: 'Statistics', credits: 3 },
 	{ id: 'gen231', name: 'Miracle of thinking', credits: 3 },
-	{ id: 'lng222', name: 'Academic', credits: 3 },
-	
+	{ id: 'lng222', name: 'Academic', credits: 3 }
     ],
-    'year2semester1': [
+  'year2semester1': [
         { id: 'csc105', name: 'Web Dev App', credits: 3 },
 	{ id: 'csc202', name: 'OO Concept', credits: 1 },
 	{ id: 'csc210', name: 'Algorithms', credits: 3 },
