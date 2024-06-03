@@ -5,7 +5,7 @@ import './App.css';
 
 const initialCourses = {
     'year1semester1': [
-        { id: 'csc102', name: 'Introduction to Programming', credits: 3, prerequisites: ['csc122', 'csc209', 'csc233'], inversePrerequisites: true },
+        { id: 'csc102', name: 'Introduction to Programming', credits: 3, prerequisites: ['csc122', 'csc209', 'csc233', 'csc213'], inversePrerequisites: true },
 	{ id: 'csc111', name: 'Ethics', credits: 1 },
 	{ id: 'csc165', name: 'Discrete Mathematics', credits: 3 },
 	{ id: 'gen111', name: 'Man & Ethics of Living', credits: 3 },
@@ -14,24 +14,68 @@ const initialCourses = {
         { id: 'math101', name: 'Calculus I', credits: 3, prerequisites: ['math102'], inversePrerequisites: true }
     ],
     'year1semester2': [
-        { id: 'csc122', name: 'Intro to prog. Lab', credits: 3, prerequisites: ['csc102']},
+	{ id: 'csc122', name: 'Intro to prog. Lab', credits: 2, prerequisites: ['csc102', 'csc205/219', 'csc352', 'csc312'], inversePrerequisites: true },
 	{ id: 'csc209', name: 'Data Structures', credits: 3 },	
-	{ id: 'csc233', name: 'Programming Paradigms', credits: 2 },
+	{ id: 'csc233', name: 'Programming Paradigms', credits: 2, prerequisites: ['csc102'] },
         { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] },
-	{ id: 'csc233', name: 'Statistics', credits: 3 },
+	{ id: 'csc261', name: 'Statistics', credits: 3 },
 	{ id: 'gen231', name: 'Miracle of thinking', credits: 3 },
 	{ id: 'lng222', name: 'Academic', credits: 3 }
     ],
-  'year2semester1': [
+    'year2semester1': [
         { id: 'csc105', name: 'Web Dev App', credits: 3 },
 	{ id: 'csc202', name: 'OO Concept', credits: 1 },
 	{ id: 'csc210', name: 'Algorithms', credits: 3 },
 	{ id: 'csc218', name: 'DB', credits: 3 },
 	{ id: 'csc290', name: 'Integrated Project', credits: 1 },
 	{ id: 'csc203', name: 'Com. Arch.', credits: 3 },
-	{ id: 'csc201', name: 'Introduction to Something', credits: 3 },
-        { id: 'math101', name: 'Calculus I', credits: 4, prerequisites: ['math102'], inversePrerequisites: true }
+	{ id: 'csc201', name: 'SA&D', credits: 3},
+        { id: 'lng200', name: 'Effective Listening', credits: 1 }
     ],
+      'year2semester2': [
+        { id: 'csc220', name: 'Networks', credits: 3 },
+	{ id: 'csc291', name: 'Integrated proj. (2)', credits: 1 },
+	{ id: 'csc231', name: 'Agile SE', credits: 3},
+	{ id: 'csc234', name: 'User Centered Mob. App.', credits: 3 },
+	{ id: 'mthxxx', name: 'Math Elective', credits: 3 },
+	{ id: 'csc203', name: 'Com. Arch.', credits: 3 },
+	{ id: 'gen352', name: 'Technology & Innovation', credits: 3 }
+    ],
+       'year3semester1': [
+        { id: 'csc205/219', name: 'Networks', credits: 1},
+	{ id: 'csc319', name: 'OO', credits: 1 },
+	{ id: 'csc340', name: 'AI', credits: 3},
+	{ id: 'csc498', name: 'Cs Elective 1', credits: 3},
+	{ id: 'cscxxx', name: 'Math Elective', credits: 3 },
+	{ id: 'gen101', name: 'Physical Education', credits: 1 },
+	{ id: 'lng320', name: 'Content Based', credits: 3 }
+    ],
+       'year3semester2': [
+	{ id: 'csc302', name: 'Domain Seminar', credits: 1},
+	{ id: 'csc351', name: 'App Sec.', credits: 2 },
+	{ id: 'csc371', name: 'Dyst. Sys.', credits: 3 },
+	{ id: 'csc498', name: 'Caps. Sen. Proj.', credits: 3 },
+	{ id: 'cscxxx', name: 'Cs Elective 2', credits: 3 },
+	{ id: 'scixxx', name: 'Sci Elective', credits: 1 },
+	{ id: 'lng322', name: 'Academic Writing', credits: 3 },
+	{ id: 'lng395', name: 'Internship(Summer)', credits: 1 }
+    ],
+       'year4semester1': [
+	{ id: 'csc312', name: 'Domain Seminar', credits: 1},
+	{ id: 'csc352', name: 'Security Management', credits: 2 },
+	{ id: 'csc498', name: 'Caps. Sen. Proj. 2', credits: 3 },
+	{ id: 'cscxxx', name: 'Cs Elective 3', credits: 3 },
+	{ id: 'gen241', name: 'Beauty of Life', credits: 3 },
+	{ id: 'lng308', name: 'Academic Writing', credits: 3 }
+    ], 
+       'year4semester2': [
+	{ id: 'csc301', name: 'Global Employability', credits: 1},
+	{ id: 'scixxx', name: 'Science Elective 2', credits: 3 },
+	{ id: 'csc490', name: 'Cs Elective 2', credits: 3 },
+	{ id: 'subxxx', name: 'Free Elective', credits: 2 },
+	{ id: 'lng351', name: 'Modern Management', credits: 3 },
+	{ id: 'lng303', name: 'Oral Presentation', credits: 1 }
+    ],  	
 };
 
 // Helper function to check if prerequisites are met
