@@ -15,7 +15,7 @@ const initialCourses = {
     ],
     'year1semester2': [
 	{ id: 'csc122', name: 'Intro to prog. Lab', credits: 2, prerequisites: ['csc102', 'csc205/219', 'csc352', 'csc312'], inversePrerequisites: true },
-	{ id: 'csc209', name: 'Data Structures', credits: 3 },	
+	{ id: 'csc209', name: 'Data Structures', credits: 3, prerequisites: ['csc102', 'csc210', 'csc340', 'csc318', 'csc217'], inversePrerequisites: true  },	
 	{ id: 'csc233', name: 'Programming Paradigms', credits: 2, prerequisites: ['csc102'] },
         { id: 'math102', name: 'Calculus II', credits: 3, prerequisites: ['math101'] },
 	{ id: 'csc261', name: 'Statistics', credits: 3 },
